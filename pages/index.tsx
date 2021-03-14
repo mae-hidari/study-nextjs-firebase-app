@@ -24,6 +24,10 @@ export default function Home() {
           <a>Go to page2</a>
         </Link>
 
+        <Link href={`/users/aey8C3sD2pMNeT9l0KkmAhhVYXH2`}>
+          <a>Go to users</a>
+        </Link>
+
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
