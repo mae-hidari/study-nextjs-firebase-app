@@ -28,6 +28,10 @@ export default function Home() {
           <a>Go to users</a>
         </Link>
 
+        <Link href={`/questions/received`}>
+          <a>Go to received questions</a>
+        </Link>
+
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>

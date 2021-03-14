@@ -54,7 +54,7 @@ export default function UserShow() {
       receiverUid: user.uid,
       body,
       isReplied: false,
-      createAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     setIsSEnding(false);
