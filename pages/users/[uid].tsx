@@ -12,7 +12,7 @@ type Query = {
 export default function UserShow() {
   const [user, setUser] = useState<User>(null);
   const [body, setBody] = useState("");
-  const [isSending, setIsSEnding] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const router = useRouter();
   const query = router.query as Query;
@@ -47,7 +47,7 @@ export default function UserShow() {
       return;
     }
 
-    setIsSEnding(true);
+    setIsSending(true);
 
     await firebase.firestore().collection("questions").add({
       senderUid: firebase.auth().currentUser.uid,
@@ -57,7 +57,7 @@ export default function UserShow() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
-    setIsSEnding(false);
+    setIsSending(false);
 
     setBody("");
 
