@@ -16,7 +16,8 @@ export default function UserShow() {
 
   const router = useRouter();
   const query = router.query as Query;
-  const currentUser = firebase.auth().currentUser;
+  const currentUser =
+    typeof window !== "undefined" ? firebase.auth().currentUser : null;
 
   useEffect(() => {
     if (query.uid === undefined) {
