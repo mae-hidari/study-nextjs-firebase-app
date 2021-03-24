@@ -1,10 +1,9 @@
-import { initialApp } from "../lib/firebase";
+import "../lib/firebase";
 import "../styles/globals.scss";
 import { RecoilRoot } from "recoil";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
 
-initialApp();
 dayjs.locale("ja");
 
 function MyApp({ Component, pageProps }) {
