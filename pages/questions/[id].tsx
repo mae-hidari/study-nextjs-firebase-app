@@ -41,10 +41,6 @@ export default function QuestionsShow() {
     if (!gotQuestion.isReplied) {
       return;
     }
-    console.log(
-      "🚀 ~ file: [id].tsx ~ line 42 ~ loadData ~ gotQuestion",
-      gotQuestion
-    );
 
     const answerSnapshot = await firebase
       .firestore()
@@ -63,6 +59,9 @@ export default function QuestionsShow() {
   };
 
   useEffect(() => {
+    if (user === null) {
+      return;
+    }
     loadData();
   }, [query.id]);
 
