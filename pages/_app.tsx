@@ -1,5 +1,5 @@
-import "../styles/globals.scss";
 import "../lib/firebase";
+import "../styles/globals.scss";
 import { RecoilRoot } from "recoil";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
