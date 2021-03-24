@@ -1,7 +1,7 @@
+import firebase from "firebase/app";
 import { useRouter } from "next/router";
 import { FormEvent, useState, useEffect } from "react";
 import { User } from "../../model/User";
-import firebase from "firebase/app";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
 
