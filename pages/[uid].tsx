@@ -16,7 +16,6 @@ export default function UserShow() {
 
   const router = useRouter();
   const query = router.query as Query;
-  const currentUser = firebase.auth().currentUser;
 
   useEffect(() => {
     if (query.uid === undefined) {
@@ -75,41 +74,37 @@ export default function UserShow() {
 
   return (
     <Layout>
-      {user && currentUser && (
+      {user && (
         <>
           <div className="text-center">
             <h1 className="h4">{user.name}さんのページ</h1>
             <div className="m-5">{user.name}さんに質問しよう!</div>
             <div className="row justify-content-center mb-3">
               <div className="col-12 col-md-6">
-                {user.uid === currentUser.uid ? (
-                  <div>自分には送信できません。</div>
-                ) : (
-                  <form onSubmit={onSubmit}>
-                    <textarea
-                      className="form-control"
-                      placeholder="おげんきですか？"
-                      rows={6}
-                      required
-                      value={body}
-                      onChange={(e) => setBody(e.target.value)}
-                    ></textarea>
-                    <div className="m-3">
-                      {isSending ? (
-                        <div
-                          className="spinner-border text-secondary"
-                          role="status"
-                        >
-                          <span className="visually-hidden">Loading...</span>
-                        </div>
-                      ) : (
-                        <button type="submit" className="btn btn-primary">
-                          質問を送信する
-                        </button>
-                      )}
-                    </div>
-                  </form>
-                )}
+                <form onSubmit={onSubmit}>
+                  <textarea
+                    className="form-control"
+                    placeholder="おげんきですか？"
+                    rows={6}
+                    required
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                  ></textarea>
+                  <div className="m-3">
+                    {isSending ? (
+                      <div
+                        className="spinner-border text-secondary"
+                        role="status"
+                      >
+                        <span className="visually-hidden">Loading...</span>
+                      </div>
+                    ) : (
+                      <button type="submit" className="btn btn-primary">
+                        質問を送信する
+                      </button>
+                    )}
+                  </div>
+                </form>
               </div>
             </div>
           </div>
