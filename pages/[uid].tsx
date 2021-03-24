@@ -1,5 +1,4 @@
 import firebase from "firebase/app";
-import "../lib/firebase";
 import { useRouter } from "next/router";
 import { FormEvent, useState, useEffect } from "react";
 import { User } from "../model/User";
