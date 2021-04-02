@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <nav
-        className="navbar navbar-expend-lg navbar-light md-3"
+        className="navbar navbar-expand-lg navbar-light mb-3"
         style={{ backgroundColor: "#e3f2fd" }}
       >
         <div className="container">
@@ -15,17 +15,13 @@ export default function Layout({ children }) {
             </a>
           </div>
           <form className="d-flex">
-            <Link href="/">
-              <a>戻る</a>
-            </Link>
             <button className="btn btn-outline-primary" type="submit">
               Search
             </button>
           </form>
         </div>
       </nav>
-      <div className="container">{children} </div>
-      <ToastContainer />
+      <div className="container">{children}</div>
     </div>
   );
 }
