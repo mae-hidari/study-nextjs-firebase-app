@@ -1,9 +1,17 @@
-import Link from "next/link";
-import { ToastContainer } from "react-toastify";
+import Head from "next/head";
 
 export default function Layout({ children }) {
+  const title = "My質問回答サービス";
+  const description = "質問と回答を行えるサービスです。";
+
   return (
     <div>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" key="description" content={description} />
+        <meta property="og:title" key="ogTitle" content={title} />
+        <meta property="og:site_name" key="ogSiteName" content={title} />
+      </Head>
       <nav
         className="navbar navbar-expand-lg navbar-light mb-3"
         style={{ backgroundColor: "#e3f2fd" }}
