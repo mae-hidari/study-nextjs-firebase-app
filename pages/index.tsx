@@ -1,4 +1,5 @@
-import Head from "next/head";
+import Link from "next/link";
+import Layout from "../components/Layout";
 import { useAuthenticate } from "../hooks/authentication";
 import styles from "../styles/Home.module.css";
 
@@ -6,15 +7,20 @@ export default function Home() {
   const { user } = useAuthenticate();
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <p>{user?.uid || "未ログイン"}</p>
-      </main>
-    </div>
+    <Layout>
+      <div className="text-center">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <h1>My質問サービス</h1>
+            <p>ここは質問をしたり回答できるサービスです。</p>
+            <Link href="/users/me">
+              <a className="btn btn-primary" role="button">
+                質問してもらう！
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </Layout>
   );
 }

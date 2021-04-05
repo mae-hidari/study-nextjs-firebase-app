@@ -4,6 +4,7 @@ import { FormEvent, useState, useEffect } from "react";
 import { User } from "../../model/User";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 type Query = {
   uid: string;
@@ -104,9 +105,22 @@ export default function UserShow() {
                           <span className="visually-hidden">Loading...</span>
                         </div>
                       ) : (
-                        <button type="submit" className="btn btn-primary">
-                          質問を送信する
-                        </button>
+                        <>
+                          <button type="submit" className="btn btn-primary">
+                            質問を送信する
+                          </button>
+                          <div>
+                            {user && (
+                              <p>
+                                <Link href="/users/me">
+                                  <a className="btn btn-link">
+                                    自分もみんなに質問してもらおう！
+                                  </a>
+                                </Link>
+                              </p>
+                            )}
+                          </div>
+                        </>
                       )}
                     </div>
                   </form>
