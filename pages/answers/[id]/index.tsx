@@ -2,6 +2,7 @@ import Layout from "../../../components/Layout";
 import { Answer } from "../../../model/Answer";
 import { Question } from "../../../model/Questions";
 import Head from "next/head";
+import TwitterShareButton from "../../../components/TwitterShareButton";
 
 type Props = {
   answer: Answer;
@@ -37,6 +38,13 @@ export default function AnswersShow(props: Props) {
                 <div className="card-body text-left">{props.answer.body}</div>
               </div>
             </section>
+
+            <div className="my-3 d-flex justify-content-center">
+              <TwitterShareButton
+                url={`${process.env.NEXT_PUBLIC_WEB_URL}/answers/${props.answer.id}`}
+                text={props.answer.body}
+              ></TwitterShareButton>
+            </div>
           </>
         </div>
       </div>
